@@ -1,0 +1,26 @@
+{
+  "name": "frontend_development",
+  "version": "1.0.0",
+  "description": "A compilation of various frontend projects based on the react and NextJs Ecosystem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thenextgen1/Frontend_Development.git"
+  },
+  "keywords": [
+    "Frontend",
+    "Engineering",
+    "React",
+    "NextJs",
+    "MERN"
+  ],
+  "author": "Elijah Ohiwerei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thenextgen1/Frontend_Development/issues"
+  },
+  "homepage": "https://github.com/Thenextgen1/Frontend_Development#readme"
+}

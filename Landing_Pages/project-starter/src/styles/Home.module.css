@@ -19,20 +19,31 @@
     background-position: 96% 95%;
 }
 
-.hero_container>div:nth-of-type(2)::after {
-    content: " ";
-    width: 88px;
-    height: 33.57px;
-    background: url(/home/swirl.svg);
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 35%;
-    margin: -35px;
-    display: block;
+
+
+.trusted_companies img {
+    @apply m-4;
 }
 
 @media(min-width: 640px) {
     .hero_form {
         background-position: 4.5% 50%;
+    }
+
+
+}
+
+@media (min-width: 1280px) {
+
+    .hero_container>div:nth-of-type(2)::after {
+        content: " ";
+        width: 88px;
+        height: 33.57px;
+        background: url(/home/swirl.svg);
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 35%;
+        margin: -35px;
+        display: block;
     }
 }

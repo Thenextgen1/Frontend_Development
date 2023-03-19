@@ -1,10 +1,49 @@
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
+import { motion } from "framer-motion";
+
+const item = {
+  hidden: {
+    opacity: 0,
+    y: -50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      delay: 1,
+    },
+  },
+};
+
+const imageVariants = {
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+  },
+  hidden: {
+    opacity: 0,
+    scale: 0.2,
+    y: -100,
+    transition: {
+      duration: 1,
+      delay: 1,
+    },
+  },
+};
 
 const Comfort = () => {
   return (
     <div className="lg:flex justify-evenly">
-      <div className={`${styles.comfort_avatar} `}>
+      <motion.div
+        className={`${styles.comfort_avatar} `}
+        initial="hidden"
+        viewport={{ once: true }}
+        whileInView="visible"
+        variants={imageVariants}
+      >
         <Image
           src="/home/comfort_1.png"
           className="rounded-lg"
@@ -12,20 +51,38 @@ const Comfort = () => {
           height={345.88}
           alt="building"
         />
-      </div>
+      </motion.div>
       <div className="lg:ml-24 mt-6 lg:mt-0">
-        <h3 className="text-left text-[#151D48] font-semibold font-Poppins py-2 text-4xl mx-2 lg:mx-0">
+        <motion.h3
+          variants={item}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-left text-[#151D48] font-semibold font-Poppins py-2 text-4xl mx-2 lg:mx-0"
+        >
           Comfort is Our Top <br className="hidden sm:block" /> Priority for you
-        </h3>
-        <p className="text-xl text-[#737791] pt-6 pb-2">
+        </motion.h3>
+        <motion.p
+          variants={item}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-xl text-[#737791] pt-6 pb-2"
+        >
           Congue enim vitae a ultricies feugiat aliquet netus leo. Nec,{" "}
           <br className="hidden sm:block" /> volutpat volutpat vulputate
           adipiscing.
-        </p>
-        <ul className={`${styles.comfort_list}`}>
+        </motion.p>
+        <motion.ul
+          variants={item}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className={`${styles.comfort_list}`}
+        >
           <li>Premium National Marketing</li>
           <li>Free, no Obligation Valuations</li>
-        </ul>
+        </motion.ul>
       </div>
     </div>
   );

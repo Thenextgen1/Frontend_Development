@@ -6,7 +6,48 @@ import residencyData from "@/data/residencies.json";
 import testimonialsData from "@/data/testimonials.json";
 import BaseLayout from "@/layout";
 import styles from "@/styles/Home.module.css";
+import { motion } from "framer-motion";
 import Image from "next/image";
+
+const container = {
+  hidden: { opacity: 0, scale: 0, y: 100 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const imageVariants = {
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+  },
+  hidden: {
+    opacity: 0,
+    scale: 0.2,
+    y: -100,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 100, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 
 export default function Home() {
   return (
@@ -33,7 +74,13 @@ export default function Home() {
             </p>
             <LocationForm />
           </div>
-          <div className="mt-12 xl:mt-0">
+          <motion.div
+            initial="hidden"
+            viewport={{ once: true }}
+            whileInView="visible"
+            variants={imageVariants}
+            className="mt-12 xl:mt-0"
+          >
             <Image
               src="/home/hero.png"
               width={537}
@@ -41,7 +88,7 @@ export default function Home() {
               alt="hero house"
               className="rounded-lg"
             />
-          </div>
+          </motion.div>
         </section>
         <section className=" py-8 md:py-24">
           <h3 className="text-center pt-4 md:pt-6 font-Poppins text-4xl font-semibold text-[#151D48]">
@@ -51,40 +98,62 @@ export default function Home() {
             Non egestas nunc tempor pellentesque consequat. Metus neque,
             <br className="hidden md:block" /> sodales nisl mauris.
           </p>
-          <div
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
             className={`${styles.trusted_companies} flex justify-center lg:justify-between flex-wrap items-center pt-8 lg:pl-24 lg:pr-28 px-6 sm:px-8`}
           >
-            <Image
-              src="/home/ifttt.png"
-              alt="ifttt"
-              width={129}
-              height={39.45}
-            />
-            <Image
-              src="/home/amazon.png"
-              alt="ifttt"
-              width={129}
-              height={44.67}
-            />
-            <Image
-              src="/home/google.png"
-              alt="ifttt"
-              width={129}
-              height={41.67}
-            />
-            <Image
-              src="/home/paypal.png"
-              alt="ifttt"
-              width={129}
-              height={36.58}
-            />
-            <Image
-              src="/home/airbnb.png"
-              alt="ifttt"
-              width={129}
-              height={46.59}
-            />
-          </div>
+            {[
+              {
+                src: "/home/ifttt.png",
+                alt: "ifttt",
+                width: 129,
+                height: 39.45,
+              },
+              {
+                src: "/home/amazon.png",
+                alt: "amazon",
+                width: 129,
+                height: 44.67,
+              },
+
+              {
+                src: "/home/google.png",
+                alt: "google",
+                width: 129,
+                height: 41.67,
+              },
+              {
+                src: "/home/paypal.png",
+                alt: "paypal",
+                width: 129,
+                height: 36.58,
+              },
+              {
+                src: "/home/airbnb.png",
+                alt: "airbnb",
+                width: 129,
+                height: 46.59,
+              },
+            ].map((details, i) => (
+              <motion.div
+                variants={item}
+                whileInView="visible"
+                viewport={{ once: true }}
+                initial="hidden"
+                key={i}
+              >
+                <Image
+                  src={details.src}
+                  width={details.width}
+                  height={details.height}
+                  alt={details.alt}
+                />
+              </motion.div>
+            ))}
+          </motion.div>
         </section>
         <section className="py-8 md:py-24">
           <h3 className="text-center pt-4 md:pt-6 font-Poppins px-2  sm:px-0 text-4xl font-semibold text-[#151D48]">
@@ -115,21 +184,39 @@ export default function Home() {
           <Comfort />
         </section>
         <section className="xl:pl-24 xl:pr-28 px-6 sm:px-8 my-8  pb-12 pt-8 sm:pb-28">
-          <h4 className="font-Poppins px-3 text-2xl sm:px-0 font-semibold text-center text-[#151D48] sm:text-4xl ">
+          <motion.h4
+            variants={item}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="font-Poppins px-3 text-2xl sm:px-0 font-semibold text-center text-[#151D48] sm:text-4xl "
+          >
             What Our Customer Say About Us
-          </h4>
-          <p className="text-xl text-[#737791] my-5 text-center">
+          </motion.h4>
+          <motion.p
+            variants={item}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-xl text-[#737791] my-5 text-center"
+          >
             Arcu, accumsan quam mi porttitor etiam in. Libero egestas
             <br className="hidden sm:block" /> amet, quam sagittis.
-          </p>
-          <div className="flex justify-center flex-col lg:flex-row items-center pt-20">
+          </motion.p>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="flex justify-center flex-col lg:flex-row items-center pt-20"
+          >
             {testimonialsData.map((details, i) => (
               <Testimonials
                 key={i}
                 details={details}
               />
             ))}
-          </div>
+          </motion.div>
           <div className="flex justify-center pt-10 items-center">
             <div className="w-[17.29px] h-[17.47px] rounded-full bg-[#E8E8ED]"></div>
             <div className="flex items-center justify-center rounded-full mx-2 w-[26.71px] h-[27px] border-[#737791] border-[1px] border-solid">

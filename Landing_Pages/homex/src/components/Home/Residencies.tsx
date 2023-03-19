@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 type props = {
@@ -9,9 +10,24 @@ type props = {
   };
 };
 
+const item = {
+  hidden: { y: -150, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: 1 },
+  },
+};
+
 const Residencies = ({ details }: props) => {
   return (
-    <div className="p-4 my-4 mx-2  sm:mx-3 bg-[#F9FAFB] rounded-lg border-[1px] solid border-[#E8E8ED] border-solid">
+    <motion.div
+      variants={item}
+      whileInView="visible"
+      initial="hidden"
+      viewport={{ once: true }}
+      className="p-4 my-4 mx-2  sm:mx-3 bg-[#F9FAFB] max-w-[515px] rounded-lg border-[1px] solid border-[#E8E8ED] border-solid"
+    >
       <Image
         src={details.image}
         className="rounded-lg w-full"
@@ -35,7 +51,7 @@ const Residencies = ({ details }: props) => {
           </button>
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

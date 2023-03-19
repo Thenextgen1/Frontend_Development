@@ -16,7 +16,7 @@ const Footer = () => {
         <li className="mx-6">Home</li>
         <li className="mx-6">About</li>
         <li className="mx-6">Services</li>
-        <li className="mx-6">Contact</li>
+        <li className="mx-6 leading-loose">Contact</li>
       </ul>
       <ul className="text-lg text-white flex justify-center items-center my-8 ">
         <li className="mx-5">

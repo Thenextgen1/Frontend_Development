@@ -1,3 +1,3 @@
-# Frontend_Development
+# Homex Landing Page
 
-Compilation of projects built on the frontend ecosystem specialising on User Interface Development
+A real estate landing page called homex built with Next.js and Tailwind CSS.

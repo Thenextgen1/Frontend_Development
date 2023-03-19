@@ -1,0 +1,20 @@
+[{
+    "image": "/home/residency_1.png",
+    "title": "Varius odio vel",
+    "description": "Sagittis, odio turpis amet at lacinia ornare id. Felis bibendum.",
+    "price": "$25,253"
+},
+{
+    "image": "/home/residency_2.png",
+    "title": "Blandit volutpat nunc",
+    "description": "Suspendisse pellentesque vestibulum tincidunt in diam libero dolor urna",
+    "price": "$25,253"
+},
+{
+    "image": "/home/residency_3.png",
+    "title": "Eu tempus, gravida",
+    "description": "Rhoncus pellentesque et porttitor mi adipiscing vitae odio enim",
+    "price": "$25,253"
+}
+
+]

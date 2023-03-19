@@ -1,6 +1,9 @@
+import Comfort from "@/components/Home/Comfort";
 import LocationForm from "@/components/Home/LocationForm";
 import Residencies from "@/components/Home/Residencies";
+import Testimonials from "@/components/Home/Testimonials";
 import residencyData from "@/data/residencies.json";
+import testimonialsData from "@/data/testimonials.json";
 import BaseLayout from "@/layout";
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
@@ -12,7 +15,7 @@ export default function Home() {
       description={""}
       keywords={""}
     >
-      <main>
+      <main className="bg-[#FCFDFF]">
         <section
           className={`${styles.hero_container} flex flex-col xl:justify-between justify-center xl:flex-row pt-14 pb-20 bg-[#151D48] lg:pl-24 lg:pr-28 px-6 sm:px-8 items-center`}
         >
@@ -92,7 +95,7 @@ export default function Home() {
             laoreet <br className="hidden md:block" /> lorem quis eget. Nam
             potenti dolor dui, netus.
           </p>
-          <div className="flex flex-col justify-center items-center lg:pl-24 lg:pr-28 px-6 sm:px-8 xl:flex-row">
+          <div className="flex flex-col justify-center items-center xl:pl-24 xl:pr-28 flex-wrap mx-6 sm:px-8 lg:flex-row">
             {residencyData.map((details, i) => (
               <Residencies
                 details={details}
@@ -106,6 +109,51 @@ export default function Home() {
               <div className="bg-[#567AE5] w-[17.29px] h-[17.47px] rounded-full"></div>
             </div>
             <div className="rounded-full w-[17.29px] h-[17.47px] bg-[#E8E8ED]"></div>
+          </div>
+        </section>
+        <section className="xl:pl-24 xl:pr-28 px-6 sm:px-8 my-8  pb-12 pt-8 sm:pb-28">
+          <Comfort />
+        </section>
+        <section className="xl:pl-24 xl:pr-28 px-6 sm:px-8 my-8  pb-12 pt-8 sm:pb-28">
+          <h4 className="font-Poppins px-3 text-2xl sm:px-0 font-semibold text-center text-[#151D48] sm:text-4xl ">
+            What Our Customer Say About Us
+          </h4>
+          <p className="text-xl text-[#737791] my-5 text-center">
+            Arcu, accumsan quam mi porttitor etiam in. Libero egestas
+            <br className="hidden sm:block" /> amet, quam sagittis.
+          </p>
+          <div className="flex justify-center flex-col lg:flex-row items-center pt-20">
+            {testimonialsData.map((details, i) => (
+              <Testimonials
+                key={i}
+                details={details}
+              />
+            ))}
+          </div>
+          <div className="flex justify-center pt-10 items-center">
+            <div className="w-[17.29px] h-[17.47px] rounded-full bg-[#E8E8ED]"></div>
+            <div className="flex items-center justify-center rounded-full mx-2 w-[26.71px] h-[27px] border-[#737791] border-[1px] border-solid">
+              <div className="bg-[#567AE5] w-[17.29px] h-[17.47px] rounded-full"></div>
+            </div>
+            <div className="rounded-full w-[17.29px] h-[17.47px] bg-[#E8E8ED]"></div>
+          </div>
+        </section>
+
+        <section className="lg:pl-24 lg:pr-28 px-6 sm:px-8 my-8 sm:my-24">
+          <div className=" bg-[#567AE5] py-20  rounded-lg">
+            <h4 className="font-Poppins px-3 text-2xl sm:px-0 font-semibold text-center sm:text-4xl text-white">
+              What Our Customer Say About Us
+            </h4>
+            <p className="text-xl py-9 px-3 sm:px-0 text-[#F9FAFB] text-center">
+              Gravida et dignissim sit augue suscipit leo nisl, tristique.
+              Scelerisque <br className="hidden sm:block" /> consequat vel
+              penatibus vivamus nec.
+            </p>
+            <p className="text-center">
+              <button className="font-Poppins text-lg text-white font-medium rounded-lg py-3 px-6 bg-[#151D48] ">
+                Get Started
+              </button>
+            </p>
           </div>
         </section>
       </main>

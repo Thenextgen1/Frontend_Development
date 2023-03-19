@@ -11,10 +11,10 @@ type props = {
 
 const Residencies = ({ details }: props) => {
   return (
-    <div className="p-4 my-4 sm:w-[345px] sm:h-[453.781px] xl:mx-3 bg-[#F9FAFB] rounded-lg border-[1px] solid border-[#E8E8ED] border-solid">
+    <div className="p-4 my-4 mx-2  sm:mx-3 bg-[#F9FAFB] rounded-lg border-[1px] solid border-[#E8E8ED] border-solid">
       <Image
         src={details.image}
-        className="rounded-lg"
+        className="rounded-lg w-full"
         width={345}
         height={294}
         alt="residency"

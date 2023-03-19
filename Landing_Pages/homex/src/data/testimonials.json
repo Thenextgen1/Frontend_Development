@@ -1,0 +1,18 @@
+[{
+    "avatar": "/home/testimonial_1.png",
+    "name": "Adalberto Kovach",
+    "description": "There are many variations of passages of Lorem Ipsum form, by injected humour randomised words.",
+    "job": "Marketing Management"
+},
+{
+    "avatar": "/home/testimonial_2.png",
+    "name": "Gino Lavender",
+    "description": "There are many variations of passages of Lorem Ipsum form, by injected humour randomised words.",
+    "job": "Marketing Management"
+},
+{
+    "avatar": "/home/testimonial_3.png",
+    "name": "Pedro Pounds",
+    "description": "There are many variations of passages of Lorem Ipsum form, by injected humour randomised words.",
+    "job": "Marketing Management"
+}]

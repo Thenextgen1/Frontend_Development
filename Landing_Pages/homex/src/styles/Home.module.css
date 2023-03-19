@@ -25,9 +25,64 @@
     @apply m-4;
 }
 
+.testimonials_card img {
+    filter: drop-shadow(0px 5px 25px rgba(0, 0, 0, 0.14902));
+}
+
+
+.testimonials_card::before {
+    content: " ";
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    display: block;
+    background-image: url(/home/quote.svg);
+    @apply rounded-full;
+    background-position: center;
+    position: absolute;
+    margin-top: -3.5em;
+    margin-left: 10px;
+    background-color: #FF74C4
+}
+
+.testimonials_card:nth-of-type(2)::before {
+    background-color: #567AE5;
+}
+
+.testimonials_card:nth-of-type(3)::before {
+    background-color: #FFA842;
+}
+
+.comfort_list li {
+    @apply py-2 text-xl text-[#151D48];
+}
+
+.comfort_list li::before {
+    @apply inline-block bg-[#567AE5] rounded-[4px] w-[12px] h-[12px] mr-4;
+    content: " ";
+
+}
+
+
+
 @media(min-width: 640px) {
     .hero_form {
         background-position: 4.5% 50%;
+    }
+
+    .comfort_avatar::after {
+        content: " ";
+        @apply block rounded-lg;
+        width: 230.29px;
+        height: 240px;
+        margin-left: 14.5em;
+        margin-top: -12em;
+        z-index: 10;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: url(/home/comfort_2.png);
+
     }
 
 

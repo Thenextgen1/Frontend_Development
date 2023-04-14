@@ -12,7 +12,7 @@ const item = {
     y: 0,
     transition: {
       duration: 0.6,
-      delay: 1,
+      delay: 0.5,
     },
   },
 };
@@ -22,15 +22,15 @@ const imageVariants = {
     opacity: 1,
     scale: 1,
     y: 0,
+    transition: {
+      duration: 1,
+      delay: 1,
+    },
   },
   hidden: {
     opacity: 0,
     scale: 0.2,
     y: -100,
-    transition: {
-      duration: 1,
-      delay: 1,
-    },
   },
 };
 

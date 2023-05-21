@@ -12,7 +12,7 @@ const item = {
     y: 0,
     transition: {
       duration: 0.6,
-      delay: 1,
+      delay: 0.5,
     },
   },
 };
@@ -22,21 +22,21 @@ const imageVariants = {
     opacity: 1,
     scale: 1,
     y: 0,
-  },
-  hidden: {
-    opacity: 0,
-    scale: 0.2,
-    y: -100,
     transition: {
       duration: 1,
       delay: 1,
     },
   },
+  hidden: {
+    opacity: 0,
+    scale: 0.2,
+    y: -100,
+  },
 };
 
 const Comfort = () => {
   return (
-    <div className="lg:flex justify-evenly">
+    <div className="flex flex-col justify-center items-center lg:items-start lg:flex-row lg:justify-evenly">
       <motion.div
         className={`${styles.comfort_avatar} `}
         initial="hidden"
@@ -58,9 +58,9 @@ const Comfort = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-left text-[#151D48] font-semibold font-Poppins py-2 text-4xl mx-2 lg:mx-0"
+          className="text-left text-[#151D48] font-semibold font-Poppins py-2 text-4xl mx-2 mt-8 lg:mt-0 lg:mx-0"
         >
-          Comfort is Our Top <br className="hidden sm:block" /> Priority for you
+          Comfort is Our Top <br className="hidden lg:block" /> Priority for you
         </motion.h3>
         <motion.p
           variants={item}

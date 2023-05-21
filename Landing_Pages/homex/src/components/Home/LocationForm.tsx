@@ -2,15 +2,15 @@ import styles from "@/styles/Home.module.css";
 
 const LocationForm = () => {
   return (
-    <div>
+    <div className="max-w-[450px]">
       <form
         className={`${styles.hero_form} bg-white  rounded-lg pl-7 py-[5px] pr-1 flex items-center justify-between`}
       >
-        <div className="">
+        <div className="max-w-[300px]">
           <input
             type="text"
             placeholder="Search by Location"
-            className="ml-2 sm:ml-8 text-xl w-[50vw] xl:w-auto"
+            className="ml-2 sm:ml-8 text-xl w-[50vw] xl:w-auto max-w-[300px]"
           />
         </div>
         <p>

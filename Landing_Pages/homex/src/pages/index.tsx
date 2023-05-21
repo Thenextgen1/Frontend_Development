@@ -91,7 +91,7 @@ export default function Home() {
             viewport={{ once: true }}
             whileInView="visible"
             variants={imageVariants}
-            className="mt-12 xl:mt-0"
+            className="mt-12 xl:mt-0 xl:ml-5"
           >
             <Image
               src="/home/hero.png"
